@@ -1,2 +1,2 @@
-# bispidine
-Simulation details of bispidine linked peptides and associated molecules
+# Bispidine
+##Simulation details of bispidine linked peptides and associated molecules##
