@@ -1,0 +1,68 @@
+; ---- 
+; Built itp for mch.mol2 
+;    by user vzoete     Fri Feb 26 10:59:55 UTC 2021 
+; ---- 
+;
+
+[ atomtypes ] 
+; name at.num  mass   charge  ptype    sigma            epsilon 
+CR      6   12.0110  0.0  A         0.387541    0.230120  
+CLMM   17   35.4527  0.0  A         0.363487    1.087840  
+HCMM    1    1.0079  0.0  A         0.235197    0.092048  
+
+
+[ pairtypes ] 
+;  i     j    func     sigma1-4       epsilon1-4 ; THESE ARE 1-4 INTERACTIONS 
+CR       CR     1      0.338541    0.041840 
+CR       CLMM   1      0.351014    0.213343 
+CR       HCMM   1      0.286869    0.062059 
+
+[ moleculetype ]
+; Name nrexcl 
+mch 3
+
+[ atoms ] 
+; nr type resnr resid atom cgnr charge mass 
+   1 CR   1  LIG C       1  0.8700  12.0110 
+   2 CLMM 1  LIG Cl      2 -0.2900  35.4527 
+   3 CLMM 1  LIG Cl1     3 -0.2900  35.4527 
+   4 CLMM 1  LIG Cl2     4 -0.2900  35.4527 
+   5 HCMM 1  LIG H       5 -0.0000   1.0079 
+
+[ bonds ]
+; ai aj fu b0 kb, b0 kb 
+  1   2 1 0.17730  179098.6  0.17730  179098.6 
+  1   3 1 0.17730  179098.6  0.17730  179098.6 
+  1   4 1 0.17730  179098.6  0.17730  179098.6 
+  1   5 1 0.10930  287014.9  0.10930  287014.9 
+
+[ pairs ]
+; ai aj fu 
+
+[ angles ] 
+; ai aj ak fu th0 kth ub0 kub th0 kth ub0 kub 
+  2   1   3 1  110.4220  660.02    110.4220  660.02 
+  2   1   4 1  110.4220  660.02    110.4220  660.02 
+  2   1   5 1  108.1620  420.34    108.1620  420.34 
+  3   1   4 1  110.4220  660.02    110.4220  660.02 
+  3   1   5 1  108.1620  420.34    108.1620  420.34 
+  4   1   5 1  108.1620  420.34    108.1620  420.34 
+
+[ dihedrals ] 
+; ai aj ak al fu phi0 kphi mult phi0 kphi mult 
+
+[ dihedrals ]
+; ai aj ak al fu xi0 kxi xi0 kxi 
+  1   3   2   4 2   0.00   0.0000     0.00   0.0000
+  1   3   2   5 2   0.00   0.0000     0.00   0.0000
+
+
+#ifdef POSRES_LIGAND 
+[ position_restraints ] 
+; atom  type      fx      fy      fz 
+   1 1 1000 1000 1000 
+   2 1 1000 1000 1000 
+   3 1 1000 1000 1000 
+   4 1 1000 1000 1000 
+#endif 
+
